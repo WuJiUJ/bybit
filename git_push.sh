@@ -1,7 +1,7 @@
 #!/bin/sh
 
 USERNAME="WuJiUJ"
-PASSWORD="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"
+PASSWORD="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"
 REMOTE_REPO="github.com/WuJiUJ/bybit.git"
 EMAIL="email@domain.com"
 
