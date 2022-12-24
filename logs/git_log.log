@@ -27,3 +27,12 @@ hint: "git config advice.addIgnoredFile false"
  3 files changed, 17 insertions(+)
 error: cannot run ssh: No such file or directory
 fatal: unable to fork
+The following paths are ignored by one of your .gitignore files:
+secret.py
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
+[main ca35b4f] Auto Server Commit
+ 3 files changed, 16 insertions(+)
+error: cannot run ssh: No such file or directory
+fatal: unable to fork
