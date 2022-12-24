@@ -8,3 +8,12 @@ hint: "git config advice.addIgnoredFile false"
  rewrite logs/bot.log (100%)
 error: src refspec master does not match any
 error: failed to push some refs to 'github.com:WuJiUJ/bybit.git'
+The following paths are ignored by one of your .gitignore files:
+secret.py
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
+[main cfc1180] Auto Server Commit
+ 5 files changed, 18 insertions(+), 1 deletion(-)
+error: cannot run ssh: No such file or directory
+fatal: unable to fork
