@@ -1,0 +1,7 @@
+2022-12-24 16:21:02 UTC Bot started
+2022-12-24 16:21:03 UTC      symbol  predicted_funding_rate  abs_predicted_funding_rate  1h_interest_rate     loanable  max_loanable  tradeable_usdt  initial_fixed_profit_loss  expected_usdt_profit is_signal is_long_spot
+0  BICOUSDT               -0.000954                    0.000954          0.000006  9075.853974         499.0          28.500                  -0.000146             -0.008303     False        False
+1   APEUSDT               -0.000827                    0.000827          0.000008   686.264951         119.0          28.500                  -0.000219             -0.012469     False        False
+2   SOLUSDT               -0.000649                    0.000649          0.000023   216.927265           1.5          17.048                  -0.000367             -0.012515     False        False
+2022-12-24 16:21:03 UTC Position: {'id': '12371645-4209-47b3-bf5b-f9c1d2bfe9d7', 'open_time': datetime.datetime(2022, 12, 23, 23, 58, 2, 312610), 'symbol': 'MANAUSDT', 'total_usdt': 57.0, 'usdt_per_trade': 28.5, 'exchange': <exchange.Exchange object at 0x7f89165f5de0>, 'is_long_spot': False, 'entry_funding_rate': -0.00209207, 'status': <PositionStatus.PENDING: 'PENDING'>, 'funding_profit_loss': 0, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [], 's_entry_order': <order.Order object at 0x7f89165f6950>, 'f_entry_order': <order.Order object at 0x7f89165f6980>}
+2022-12-24 16:21:03 UTC Bot stopped
