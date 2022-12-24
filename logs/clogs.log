@@ -40,3 +40,11 @@ Cmd('git') failed due to: exit code(128)
   cmdline: git push --porcelain origin
   stderr: 'fatal: could not read Username for 'https://github.com': No such device or address'
 Some error occured while pushing the code
+2022-12-24 19:22:01.836003 Bot started
+2022-12-24 19:22:01.836003 Bot ended
+git@github.com:WuJiUJ/bybit.git
+Cmd('git') failed due to: exit code(128)
+  cmdline: git push --porcelain origin
+  stderr: 'error: cannot run ssh: No such file or directory
+fatal: unable to fork'
+Some error occured while pushing the code
