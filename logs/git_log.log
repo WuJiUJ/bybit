@@ -1,5 +1,0 @@
-[main 4c4d2b0] Auto Server Commit
- 5 files changed, 2 insertions(+), 61 deletions(-)
- rewrite logs/bot.log (100%)
- rewrite logs/clogs.log (100%)
- rewrite logs/git_log.log (100%)

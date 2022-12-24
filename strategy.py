@@ -30,32 +30,32 @@ class Strategy:
         # data["is_signal"] = True
         # data["is_long_spot"] = True
 
-        # if self.position != None:
-        #     position_funding_rate = funding_rates.loc[
-        #         "predicted_funding_rate", self.position.symbol
-        #     ]
-        #     self._funding_rate_paid(position_funding_rate)
-        #     if self.position.is_long_spot == (position_funding_rate < 0):
-        #         self._exit_position(ExitReason.FCD)
-        #     elif data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2:
-        #         self._exit_position(ExitReason.FBO)
-        #     elif is_close_only:
-        #         self._exit_position(ExitReason.FC)
+        if self.position != None:
+            position_funding_rate = funding_rates.loc[
+                "predicted_funding_rate", self.position.symbol
+            ]
+            self._funding_rate_paid(position_funding_rate)
+            if self.position.is_long_spot == (position_funding_rate < 0):
+                self._exit_position(ExitReason.FCD)
+            elif data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2:
+                self._exit_position(ExitReason.FBO)
+            elif is_close_only:
+                self._exit_position(ExitReason.FC)
 
-        # if (
-        #     self.position == None
-        #     and not data.empty
-        #     and data["is_signal"]
-        #     and not is_close_only
-        # ):
-        #     self.balance_fund()
-        #     time.sleep(1)
-        #     self._enter_position(
-        #         data["symbol"],
-        #         data["predicted_funding_rate"],
-        #         data["is_long_spot"],
-        #         data["max_loanable"],
-        #     )
+        if (
+            self.position == None
+            and not data.empty
+            and data["is_signal"]
+            and not is_close_only
+        ):
+            self.balance_fund()
+            time.sleep(1)
+            self._enter_position(
+                data["symbol"],
+                data["predicted_funding_rate"],
+                data["is_long_spot"],
+                data["max_loanable"],
+            )
 
     def find_signal(self, df):
         df = df.loc["predicted_funding_rate"].to_frame()
@@ -149,8 +149,6 @@ class Strategy:
             exchange=self.exchange,
         )
         self.position.prepare_entry_orders(max_loanable)
-        with open(POSITION_OBJECT_PATH, "wb") as config_dictionary_file:
-            pickle.dump(self.position, config_dictionary_file)
         logging.info(f"entering position {self.position.id}...")
         self.broker.execute_margin_order(self.position.s_entry_order)
         if self.position.s_entry_order.status == OrderStatus.FILLED:
@@ -162,6 +160,8 @@ class Strategy:
                 self.broker.get_latest_orders_info(
                     self.position.s_entry_order, self.position.f_entry_order
                 )
+                with open(POSITION_OBJECT_PATH, "wb") as config_dictionary_file:
+                    pickle.dump(self.position, config_dictionary_file)
             else:
                 # execute spot order successfully but fail futures, i.e. reverse spot
                 self.position.prepare_exit_orders()
@@ -172,10 +172,8 @@ class Strategy:
                     else None,
                 )
                 self._position_fail("enter", "futures fail")
-                os.remove(POSITION_OBJECT_PATH)
         else:
             self._position_fail("enter", "margin fail")
-            os.remove(POSITION_OBJECT_PATH)
 
     def _exit_position(self, reason):
         self.position.close_time = self.exec_time
