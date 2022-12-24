@@ -113,7 +113,7 @@ class Bot:
                 self.test()
         except Exception as e:
             logging.error(e)
-        # git_push(f"updated logs at {datetime.utcnow()}")
+        git_push(f"updated logs at {datetime.utcnow()}")
         # if self.strategy.position != None:
         #     # todo: close position when if exist and have not tried to close
         #     if self.strategy.position.status == PositionStatus.HOLDING:
