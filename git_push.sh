@@ -2,7 +2,7 @@
 
 USERNAME="WuJiUJ"
 PASSWORD="Wuji.!2000"
-REMOTE_REPO="github.com/WuJiUJ/bybit.git"
+REMOTE_REPO="github.com/WuJiUiJ/bybit.git"
 EMAIL="email@domain.com"
 
 cd /home/wuji/bot/bybit
