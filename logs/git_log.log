@@ -13,3 +13,10 @@ fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
+[main 1eeb6a3] Auto Server Commit
+ 3 files changed, 14 insertions(+)
+ssh -i /home/wuji/.ssh/id_ed25519: 1: ssh -i /home/wuji/.ssh/id_ed25519: ssh: not found
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
