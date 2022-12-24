@@ -6,4 +6,4 @@ cd /home/wuji/bot/bybit
 
 git add -u
 git commit -m "Auto Server Commit"
-git push git@github.com:WuJiUJ/bybit.git
+git push origin
