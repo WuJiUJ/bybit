@@ -1,0 +1,8 @@
+2022-12-24 19:23:02.296708 Bot started
+2022-12-24 19:23:02.296708 Bot ended
+main
+Cmd('git') failed due to: exit code(128)
+  cmdline: git push --porcelain origin
+  stderr: 'fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.'
+Some error occured while pushing the code
