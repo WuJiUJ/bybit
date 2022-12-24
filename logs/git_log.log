@@ -1,0 +1,6 @@
+[main e260a9e] Auto Server Commit
+ 5 files changed, 9 insertions(+), 27 deletions(-)
+ rewrite logs/bot.log (82%)
+ rewrite logs/git_log.log (100%)
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/WuJiUJ/bybit.git/'
