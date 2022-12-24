@@ -1,0 +1,10 @@
+The following paths are ignored by one of your .gitignore files:
+secret.py
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
+[main 78cbf59] Auto Server Commit
+ 4 files changed, 8 insertions(+), 22 deletions(-)
+ rewrite logs/git_log.log (100%)
+error: cannot run ssh: No such file or directory
+fatal: unable to fork
