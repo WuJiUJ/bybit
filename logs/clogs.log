@@ -19,3 +19,10 @@ Cmd('git') failed due to: exit code(128)
   cmdline: git push --porcelain origin
   stderr: 'fatal: could not read Username for 'https://github.com': No such device or address'
 Some error occured while pushing the code
+2022-12-24 19:19:01.946377 Bot started
+2022-12-24 19:19:01.946377 Bot ended
+https://github.com/WuJiUJ/bybit.git
+Cmd('git') failed due to: exit code(128)
+  cmdline: git push --porcelain origin
+  stderr: 'fatal: could not read Username for 'https://github.com': No such device or address'
+Some error occured while pushing the code
