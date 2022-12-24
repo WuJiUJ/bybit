@@ -4,3 +4,16 @@ hint: Use -f if you really want to add them.
 hint: Turn this message off by running
 hint: "git config advice.addIgnoredFile false"
 ./git_push.sh: 6: ./git_push.sh: date: not found
+[main eb5d286] Auto Server Commit
+ 7 files changed, 16 insertions(+), 32 deletions(-)
+ create mode 100644 __pycache__/secret.cpython-310.pyc
+ create mode 100755 git_push.sh
+ rewrite logs/bot.log (100%)
+ create mode 100644 logs/git_log.log
+fatal: could not read Username for 'https://github.com': No such device or address
+The following paths are ignored by one of your .gitignore files:
+secret.py
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
+./git_push.sh: 6: ./git_push.sh: date: not found
