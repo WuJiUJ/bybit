@@ -9,13 +9,13 @@ import pickle
 from constants import *
 from strategy import Strategy
 from exchange import Exchange
-from utils import git_push
+from utils import Gdrive
 
 
 logging.basicConfig(
     filename=LOG_FILE_PATH,
     level=logging.INFO,
-    format="%(asctime)s %(message)s",
+    format="%(asctime)s: %(levelname)s: %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S %Z",
     filemode="a",
 )
@@ -113,7 +113,9 @@ class Bot:
                 self.test()
         except Exception as e:
             logging.error(e)
-        # git_push(f"updated logs at {datetime.utcnow()}")
+        gdrive = Gdrive()
+        gdrive.upload_file_to_gdrive("./logs/bot.log")
+        # gdrive.upload_file_to_gdrive("./logs/clogs.log")
         # if self.strategy.position != None:
         #     # todo: close position when if exist and have not tried to close
         #     if self.strategy.position.status == PositionStatus.HOLDING:

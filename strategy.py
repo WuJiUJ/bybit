@@ -30,32 +30,32 @@ class Strategy:
         # data["is_signal"] = True
         # data["is_long_spot"] = True
 
-        if self.position != None:
-            position_funding_rate = funding_rates.loc[
-                "predicted_funding_rate", self.position.symbol
-            ]
-            self._funding_rate_paid(position_funding_rate)
-            if self.position.is_long_spot == (position_funding_rate < 0):
-                self._exit_position(ExitReason.FCD)
-            elif data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2:
-                self._exit_position(ExitReason.FBO)
-            elif is_close_only:
-                self._exit_position(ExitReason.FC)
+        # if self.position != None:
+        #     position_funding_rate = funding_rates.loc[
+        #         "predicted_funding_rate", self.position.symbol
+        #     ]
+        #     self._funding_rate_paid(position_funding_rate)
+        #     if self.position.is_long_spot == (position_funding_rate < 0):
+        #         self._exit_position(ExitReason.FCD)
+        #     elif data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2:
+        #         self._exit_position(ExitReason.FBO)
+        #     elif is_close_only:
+        #         self._exit_position(ExitReason.FC)
 
-        if (
-            self.position == None
-            and not data.empty
-            and data["is_signal"]
-            and not is_close_only
-        ):
-            self.balance_fund()
-            time.sleep(1)
-            self._enter_position(
-                data["symbol"],
-                data["predicted_funding_rate"],
-                data["is_long_spot"],
-                data["max_loanable"],
-            )
+        # if (
+        #     self.position == None
+        #     and not data.empty
+        #     and data["is_signal"]
+        #     and not is_close_only
+        # ):
+        #     self.balance_fund()
+        #     time.sleep(1)
+        #     self._enter_position(
+        #         data["symbol"],
+        #         data["predicted_funding_rate"],
+        #         data["is_long_spot"],
+        #         data["max_loanable"],
+        #     )
 
     def find_signal(self, df):
         df = df.loc["predicted_funding_rate"].to_frame()
@@ -95,7 +95,7 @@ class Strategy:
             by=["expected_usdt_profit"],
             ascending=False,
         ).reset_index(drop=True)
-        logging.info(df.to_string())
+        logging.info(str(df.to_dict("index")))
         if df.empty:
             return df
         else:

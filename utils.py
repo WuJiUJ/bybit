@@ -1,5 +1,6 @@
 import math
-from git import Repo
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
 
 
 def ceil(qty, precision):
@@ -16,18 +17,29 @@ def floor(qty, precision):
     )
 
 
-# make sure .git folder is properly configured
-PATH_OF_GIT_REPO = "/home/wuji/bot/bybit/.git"
+class Gdrive:
+    def __init__(self):
+        gauth = GoogleAuth()
+        gauth.LocalWebserverAuth()
+        self.drive = GoogleDrive(gauth)
 
+    def upload_file_to_gdrive(self, filepath):
+        filename = filepath.split("/")[-1]
+        file_list = self.drive.ListFile(
+            {"q": "'1p9sW5wJY6oNDcd9bZBm7e6vSxzmhkUoU' in parents and trashed=false"}
+        ).GetList()
 
-def git_push(commit_message):
-    try:
-        repo = Repo(PATH_OF_GIT_REPO)
-        repo.git.add(update=True)
-        repo.index.commit(commit_message)
-        origin = repo.remote(name="origin")
-        print(origin.url)
-        origin.push()
-    except Exception as e:
-        print(e)
-        print("Some error occured while pushing the code")
+        for f in file_list:
+            if f["title"] == filename:
+                gfile1 = self.drive.CreateFile({"id": f["id"]})
+                gfile1.Trash()  # Move file to trash.
+                gfile1.UnTrash()  # Move file out of trash.
+                gfile1.Delete()
+        gfile2 = self.drive.CreateFile(
+            {
+                "parents": [{"id": "1p9sW5wJY6oNDcd9bZBm7e6vSxzmhkUoU"}],
+                "title": filename,
+            }
+        )
+        gfile2.SetContentFile(filepath)
+        gfile2.Upload()
