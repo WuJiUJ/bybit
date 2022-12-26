@@ -61,7 +61,7 @@ class Strategy:
         df = df.loc["predicted_funding_rate"].to_frame()
         df["abs_predicted_funding_rate"] = abs(df["predicted_funding_rate"])
         df = df[
-            df["abs_predicted_funding_rate"] > SPOT_TAKER_FEE + FUTURES_TAKER_FEE
+            (df["abs_predicted_funding_rate"] / 2) > SPOT_TAKER_FEE + FUTURES_TAKER_FEE
         ].reset_index(names=["symbol"])
         if df.empty:
             return df

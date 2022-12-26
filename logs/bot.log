@@ -1,0 +1,18 @@
+2022-12-25 07:58:03 UTC: INFO: Bot started
+2022-12-25 07:58:04 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00118228, 'abs_predicted_funding_rate': 0.00118228, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 697.0953105929166, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': -4.094333333333326e-05, 'expected_usdt_profit': -0.0023337699999999954, 'is_signal': False, 'is_long_spot': False}}
+2022-12-25 07:58:04 UTC: INFO: Bot stopped
+2022-12-25 07:58:04 UTC: INFO: access_token is expired. Now: 2022-12-25 07:58:04.225094, token_expiry: 2022-12-25 06:25:02
+2022-12-25 07:58:04 UTC: INFO: Refreshing access_token
+2022-12-25 07:58:04 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-25 15:58:02 UTC: INFO: Bot started
+2022-12-25 15:58:03 UTC: INFO: {}
+2022-12-25 15:58:03 UTC: INFO: Bot stopped
+2022-12-25 15:58:03 UTC: INFO: access_token is expired. Now: 2022-12-25 15:58:03.495184, token_expiry: 2022-12-25 08:58:03
+2022-12-25 15:58:03 UTC: INFO: Refreshing access_token
+2022-12-25 15:58:03 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-25 23:58:01 UTC: INFO: Bot started
+2022-12-25 23:58:02 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00076944, 'abs_predicted_funding_rate': 0.00076944, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 694.7559814342524, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': -0.0002473633333333333, 'expected_usdt_profit': -0.014099709999999996, 'is_signal': False, 'is_long_spot': False}}
+2022-12-25 23:58:02 UTC: INFO: Bot stopped
+2022-12-25 23:58:02 UTC: INFO: access_token is expired. Now: 2022-12-25 23:58:02.824342, token_expiry: 2022-12-25 16:58:02
+2022-12-25 23:58:02 UTC: INFO: Refreshing access_token
+2022-12-25 23:58:02 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
