@@ -131,6 +131,8 @@ class Strategy:
             payout_time = res["exec_time"]
             self.position.fundings.append((funding_rate, funding_fee, payout_time))
             self.position.funding_profit_loss += -funding_fee
+            with open(POSITION_OBJECT_PATH, "wb") as config_dictionary_file:
+                pickle.dump(self.position, config_dictionary_file)
 
     def _position_fail(self, action, source):
         self.position.status = PositionStatus.FAILED

@@ -16,3 +16,56 @@
 2022-12-25 23:58:02 UTC: INFO: access_token is expired. Now: 2022-12-25 23:58:02.824342, token_expiry: 2022-12-25 16:58:02
 2022-12-25 23:58:02 UTC: INFO: Refreshing access_token
 2022-12-25 23:58:02 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-26 07:58:03 UTC: INFO: Bot started
+2022-12-26 07:58:03 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00122574, 'abs_predicted_funding_rate': 0.00122574, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 696.2918896010062, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': -1.9213333333333287e-05, 'expected_usdt_profit': -0.0010951599999999974, 'is_signal': False, 'is_long_spot': False}}
+2022-12-26 07:58:03 UTC: INFO: Bot stopped
+2022-12-26 07:58:03 UTC: INFO: access_token is expired. Now: 2022-12-26 07:58:03.989747, token_expiry: 2022-12-26 00:58:01
+2022-12-26 07:58:03 UTC: INFO: Refreshing access_token
+2022-12-26 07:58:04 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-26 15:58:01 UTC: INFO: Bot started
+2022-12-26 15:58:02 UTC: INFO: Bot stopped
+2022-12-26 15:58:02 UTC: INFO: access_token is expired. Now: 2022-12-26 15:58:02.936649, token_expiry: 2022-12-26 08:58:03
+2022-12-26 15:58:02 UTC: INFO: Refreshing access_token
+2022-12-26 15:58:03 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-26 23:58:02 UTC: INFO: Bot started
+2022-12-26 23:58:03 UTC: INFO: Bot stopped
+2022-12-26 23:58:03 UTC: INFO: access_token is expired. Now: 2022-12-26 23:58:03.240265, token_expiry: 2022-12-26 16:58:02
+2022-12-26 23:58:03 UTC: INFO: Refreshing access_token
+2022-12-26 23:58:03 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-27 07:58:03 UTC: INFO: Bot started
+2022-12-27 07:58:04 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00133102, 'abs_predicted_funding_rate': 0.00133102, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 693.5644362284091, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': 3.342666666666678e-05, 'expected_usdt_profit': 0.0019053200000000063, 'is_signal': True, 'is_long_spot': False}}
+2022-12-27 07:58:04 UTC: INFO: Statistic: {'portfolio_value': None, 'total_usdt_balance': 1244.8436352876}
+2022-12-27 07:58:04 UTC: INFO: transferred 0.5618 USDT from SPOT to CONTRACT successfully
+2022-12-27 07:58:05 UTC: INFO: entering position 49640151-91b2-4c1b-9d0d-1265608dd81a...
+2022-12-27 07:58:05 UTC: INFO: borrowed 7.92 APE successfully with id: 376080
+2022-12-27 07:58:06 UTC: INFO: executed ENTRY margin order id 1320298839590148608 successfully
+2022-12-27 07:58:06 UTC: INFO: Order: {'id': '1320298839590148608', 'symbol': 'APEUSDT', 'market': <MarketType.SPOT: 'SPOT'>, 'type': 'MARKET', 'side': 'Sell', 'tag': 'ENTRY', 'exchange': <exchange.Exchange object at 0x7f8d83d04700>, 'coin_qty': 7.92, 'exec_coin_qty': None, 'usdt_qty': 28.6, 'status': <OrderStatus.FILLED: 'FILLED'>, 'loan_id': None, 'price': None, 'cancel_reason': None}
+2022-12-27 07:58:07 UTC: INFO: executed ENTRY futures order id 90554096-93e1-4b6f-bb8d-b5a2beb9438d successfully
+2022-12-27 07:58:07 UTC: INFO: Order: {'id': '90554096-93e1-4b6f-bb8d-b5a2beb9438d', 'symbol': 'APEUSDT', 'market': <MarketType.FUTURES: 'FUTURES'>, 'type': 'Market', 'side': 'Buy', 'tag': 'ENTRY', 'exchange': <exchange.Exchange object at 0x7f8d83d04700>, 'coin_qty': 8.0, 'exec_coin_qty': None, 'usdt_qty': None, 'status': <OrderStatus.FILLED: 'FILLED'>, 'loan_id': None, 'price': None, 'cancel_reason': None}
+2022-12-27 07:58:07 UTC: INFO: entered position id 49640151-91b2-4c1b-9d0d-1265608dd81a successfully
+2022-12-27 07:58:08 UTC: INFO: Position: {'id': '49640151-91b2-4c1b-9d0d-1265608dd81a', 'open_time': datetime.datetime(2022, 12, 27, 7, 58, 3, 291631), 'symbol': 'APEUSDT', 'total_usdt': 57.0, 'usdt_per_trade': 28.5, 'exchange': <exchange.Exchange object at 0x7f8d83d04700>, 'is_long_spot': False, 'entry_funding_rate': -0.00133102, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [], 's_entry_order': <order.Order object at 0x7f8d7d1917e0>, 'f_entry_order': <order.Order object at 0x7f8d7d190b50>}
+2022-12-27 07:58:08 UTC: INFO: Bot stopped
+2022-12-27 07:58:08 UTC: INFO: access_token is expired. Now: 2022-12-27 07:58:08.798035, token_expiry: 2022-12-27 00:58:02
+2022-12-27 07:58:08 UTC: INFO: Refreshing access_token
+2022-12-27 07:58:08 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-27 15:58:02 UTC: INFO: Bot started
+2022-12-27 15:58:03 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00141152, 'abs_predicted_funding_rate': 0.00141152, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 681.5354181825572, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': 7.367666666666681e-05, 'expected_usdt_profit': 0.004199570000000008, 'is_signal': True, 'is_long_spot': False}}
+2022-12-27 15:58:03 UTC: INFO: Position: {'id': '49640151-91b2-4c1b-9d0d-1265608dd81a', 'open_time': datetime.datetime(2022, 12, 27, 7, 58, 3, 291631), 'symbol': 'APEUSDT', 'total_usdt': 57.0, 'usdt_per_trade': 28.5, 'exchange': <exchange.Exchange object at 0x7f423338b2b0>, 'is_long_spot': False, 'entry_funding_rate': -0.00133102, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0.03826029, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [(-0.00133033, -0.03826029, '2022-12-27T08:00:00.000Z')], 's_entry_order': <order.Order object at 0x7f423338be20>, 'f_entry_order': <order.Order object at 0x7f423338be50>}
+2022-12-27 15:58:03 UTC: INFO: Bot stopped
+2022-12-27 15:58:03 UTC: INFO: access_token is expired. Now: 2022-12-27 15:58:03.751992, token_expiry: 2022-12-27 08:58:07
+2022-12-27 15:58:03 UTC: INFO: Refreshing access_token
+2022-12-27 15:58:03 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-27 23:58:02 UTC: INFO: Bot started
+2022-12-27 23:58:03 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00163365, 'abs_predicted_funding_rate': 0.00163365, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 674.9702648092895, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': 0.00018474166666666673, 'expected_usdt_profit': 0.010530275000000004, 'is_signal': True, 'is_long_spot': False}}
+2022-12-27 23:58:03 UTC: INFO: Position: {'id': '49640151-91b2-4c1b-9d0d-1265608dd81a', 'open_time': datetime.datetime(2022, 12, 27, 7, 58, 3, 291631), 'symbol': 'APEUSDT', 'total_usdt': 57.0, 'usdt_per_trade': 28.5, 'exchange': <exchange.Exchange object at 0x7f5546983190>, 'is_long_spot': False, 'entry_funding_rate': -0.00133102, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0.04073466, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [(-0.00141048, -0.04073466, '2022-12-27T16:00:00.000Z')], 's_entry_order': <order.Order object at 0x7f5546983d00>, 'f_entry_order': <order.Order object at 0x7f5546983d30>}
+2022-12-27 23:58:03 UTC: INFO: Bot stopped
+2022-12-27 23:58:03 UTC: INFO: access_token is expired. Now: 2022-12-27 23:58:03.748951, token_expiry: 2022-12-27 16:58:02
+2022-12-27 23:58:03 UTC: INFO: Refreshing access_token
+2022-12-27 23:58:03 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2022-12-28 07:58:02 UTC: INFO: Bot started
+2022-12-28 07:58:04 UTC: INFO: {0: {'symbol': 'APEUSDT', 'predicted_funding_rate': -0.00174999, 'abs_predicted_funding_rate': 0.00174999, '1h_interest_rate': 8.020833333333333e-06, 'loanable': 691.2174446667279, 'max_loanable': 119.0, 'tradeable_usdt': 28.5, 'initial_fixed_profit_loss': 0.0002429116666666668, 'expected_usdt_profit': 0.013845965000000009, 'is_signal': True, 'is_long_spot': False}}
+2022-12-28 07:58:04 UTC: INFO: Position: {'id': '49640151-91b2-4c1b-9d0d-1265608dd81a', 'open_time': datetime.datetime(2022, 12, 27, 7, 58, 3, 291631), 'symbol': 'APEUSDT', 'total_usdt': 57.0, 'usdt_per_trade': 28.5, 'exchange': <exchange.Exchange object at 0x7f8e1aaef040>, 'is_long_spot': False, 'entry_funding_rate': -0.00133102, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0.04767718, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [(-0.00163502, -0.04767718, '2022-12-28T00:00:01.000Z')], 's_entry_order': <order.Order object at 0x7f8e1aaefbb0>, 'f_entry_order': <order.Order object at 0x7f8e1aaefbe0>}
+2022-12-28 07:58:04 UTC: INFO: Bot stopped
+2022-12-28 07:58:04 UTC: INFO: access_token is expired. Now: 2022-12-28 07:58:04.039189, token_expiry: 2022-12-28 00:58:02
+2022-12-28 07:58:04 UTC: INFO: Refreshing access_token
+2022-12-28 07:58:04 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
