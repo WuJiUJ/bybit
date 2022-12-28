@@ -4,7 +4,6 @@ import time
 import pandas as pd
 import os
 import logging
-import pickle
 
 from constants import *
 from strategy import Strategy

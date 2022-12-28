@@ -14,6 +14,7 @@ ORDER_TAG_EXIT = "EXIT"
 
 POSITION_OBJECT_PATH = "/home/wuji/bot/bybit/position.pkl"
 LOG_FILE_PATH = "/home/wuji/bot/bybit/logs/bot.log"
+POSITION_RECORD_PATH = "/home/wuji/bot/bybit/records/"
 
 
 class OrderStatus(Enum):

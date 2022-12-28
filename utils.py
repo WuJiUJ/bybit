@@ -1,6 +1,7 @@
 import math
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
+import pickle
 
 
 def ceil(qty, precision):
@@ -15,6 +16,16 @@ def floor(qty, precision):
         math.floor((qty) * (10**precision)) * (0.1**precision),
         precision,
     )
+
+
+def to_skl(file_path, obj):
+    with open(file_path, "wb") as f:
+        pickle.dump(obj, f)
+
+
+def read_skl(file_path):
+    with open(file_path, "rb") as f:
+        return pickle.load(f)
 
 
 class Gdrive:

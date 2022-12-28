@@ -3,6 +3,7 @@ from order import Order
 from position import Position
 from broker import Broker
 from statistic import Statistic
+from utils import to_skl, read_skl
 
 import logging
 import time
@@ -16,8 +17,7 @@ class Strategy:
         self.exchange = exchange
         self.broker = Broker(self.exchange)
         if os.path.exists(POSITION_OBJECT_PATH):
-            with open(POSITION_OBJECT_PATH, "rb") as f:
-                self.position = pickle.load(f)
+            self.position = read_skl(POSITION_OBJECT_PATH)
         else:
             self.position = None
         self.usdt_per_trade = (self.total_cash * 0.95) / 2
@@ -131,8 +131,7 @@ class Strategy:
             payout_time = res["exec_time"]
             self.position.fundings.append((funding_rate, funding_fee, payout_time))
             self.position.funding_profit_loss += -funding_fee
-            with open(POSITION_OBJECT_PATH, "wb") as config_dictionary_file:
-                pickle.dump(self.position, config_dictionary_file)
+            to_skl(POSITION_OBJECT_PATH, self.position)
 
     def _position_fail(self, action, source):
         self.position.status = PositionStatus.FAILED
@@ -162,8 +161,7 @@ class Strategy:
                 self.broker.get_latest_orders_info(
                     self.position.s_entry_order, self.position.f_entry_order
                 )
-                with open(POSITION_OBJECT_PATH, "wb") as config_dictionary_file:
-                    pickle.dump(self.position, config_dictionary_file)
+                to_skl(POSITION_OBJECT_PATH, self.position)
             else:
                 # execute spot order successfully but fail futures, i.e. reverse spot
                 self.position.prepare_exit_orders()
@@ -201,6 +199,7 @@ class Strategy:
             )
             self.position.calculate_position(self.exec_time)
             logging.info(self.position.__str__())
+            POSITION_RECORD_PATH
             os.remove(POSITION_OBJECT_PATH)
         elif (
             self.position.s_exit_order.status != OrderStatus.FILLED
