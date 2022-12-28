@@ -105,6 +105,7 @@ class Bot:
             os.remove(POSITION_OBJECT_PATH)
 
     def run(self, config):
+        logging.info("----------------- Bot started -----------------")
         try:
             if config == "start":
                 self.start()
@@ -114,6 +115,7 @@ class Bot:
             logging.error(e)
         gdrive = Gdrive()
         gdrive.upload_file_to_gdrive("./logs/bot.log")
+        logging.info("----------------- Bot stopped -----------------")
         # gdrive.upload_file_to_gdrive("./logs/clogs.log")
         # if self.strategy.position != None:
         #     # todo: close position when if exist and have not tried to close
@@ -126,6 +128,24 @@ class Bot:
         #     ):
         #         # never tried to exit
         #         self.tried_to_exit_if_ordered_success()
+
+    def start(self):
+        dt = datetime.utcnow()
+        self.current_time = dt
+        print(dt, "Bot started")
+        self.current_fundings = pd.DataFrame(
+            data={
+                symbol: self.exchange.fetch_funding_rate(symbol=symbol)
+                for symbol in self.trading_symbols
+            }
+        )
+        self.strategy.execute(
+            self.current_fundings.loc[["predicted_funding_rate"]],
+            self.current_time,
+        )
+        if self.strategy.position != None:
+            logging.info(self.strategy.position)
+        print(dt, "Bot ended")
 
     def run_loop(self):
         logging.info("Bot started")
@@ -149,26 +169,6 @@ class Bot:
                 if self.strategy.position != None:
                     logging.info(self.strategy.position)
                 time.sleep(7.9 * 60 * 60)
-        logging.info(f"Bot stopped")
-
-    def start(self):
-        logging.info("Bot started")
-        dt = datetime.utcnow()
-        self.current_time = dt
-        print(dt, "Bot started")
-        self.current_fundings = pd.DataFrame(
-            data={
-                symbol: self.exchange.fetch_funding_rate(symbol=symbol)
-                for symbol in self.trading_symbols
-            }
-        )
-        self.strategy.execute(
-            self.current_fundings.loc[["predicted_funding_rate"]],
-            self.current_time,
-        )
-        if self.strategy.position != None:
-            logging.info(self.strategy.position)
-        print(dt, "Bot ended")
         logging.info(f"Bot stopped")
 
     def stop(self):

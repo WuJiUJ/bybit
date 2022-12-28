@@ -7,7 +7,6 @@ from utils import to_skl, read_skl
 
 import logging
 import time
-import pickle
 import os
 
 
@@ -199,7 +198,9 @@ class Strategy:
             )
             self.position.calculate_position(self.exec_time)
             logging.info(self.position.__str__())
-            POSITION_RECORD_PATH
+            to_skl(
+                POSITION_RECORD_PATH + f"position_{self.position.id}.skl", self.position
+            )
             os.remove(POSITION_OBJECT_PATH)
         elif (
             self.position.s_exit_order.status != OrderStatus.FILLED
