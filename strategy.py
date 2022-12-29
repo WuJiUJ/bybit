@@ -33,10 +33,13 @@ class Strategy:
             position_funding_rate = funding_rates.loc[
                 "predicted_funding_rate", self.position.symbol
             ]
-            self._funding_rate_paid(position_funding_rate)
+            self._funding_rate_paid()
             if self.position.is_long_spot == (position_funding_rate < 0):
                 self._exit_position(ExitReason.FCD)
-            elif data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2:
+            elif (
+                data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2
+                and data["symbol"] != self.position.symbol
+            ):
                 self._exit_position(ExitReason.FBO)
             elif is_close_only:
                 self._exit_position(ExitReason.FC)
@@ -120,7 +123,7 @@ class Strategy:
         df["is_long_spot"] = df["max_funding_rate"] > 0
         return df
 
-    def _funding_rate_paid(self, funding_rate):
+    def _funding_rate_paid(self):
         res = self.exchange.f_session.my_last_funding_fee(symbol=self.position.symbol)[
             "result"
         ]
@@ -202,6 +205,7 @@ class Strategy:
                 POSITION_RECORD_PATH + f"position_{self.position.id}.skl", self.position
             )
             os.remove(POSITION_OBJECT_PATH)
+            self.balance_fund()
         elif (
             self.position.s_exit_order.status != OrderStatus.FILLED
             and self.position.f_exit_order.status != OrderStatus.FILLED
