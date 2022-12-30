@@ -25,6 +25,8 @@ class Position:
         self.exchange = exchange
         self.is_long_spot = is_long_spot
         self.entry_funding_rate = entry_funding_rate
+        self.s_entry_order = None
+        self.f_entry_order = None
         self.status = PositionStatus.PENDING
         self.funding_profit_loss = 0
         self.profit_loss = 0
