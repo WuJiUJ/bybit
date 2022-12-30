@@ -37,7 +37,8 @@ class Strategy:
             if self.position.is_long_spot == (position_funding_rate < 0):
                 self._exit_position(ExitReason.FCD)
             elif (
-                data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2
+                not data.empty
+                and data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2
                 and data["symbol"] != self.position.symbol
             ):
                 self._exit_position(ExitReason.FBO)
