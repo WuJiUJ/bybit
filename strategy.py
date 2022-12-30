@@ -37,7 +37,7 @@ class Strategy:
             if self.position.is_long_spot == (position_funding_rate < 0):
                 self._exit_position(ExitReason.FCD)
             elif (
-                not data.empty
+                data
                 and data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2
                 and data["symbol"] != self.position.symbol
             ):
@@ -67,7 +67,7 @@ class Strategy:
             (df["abs_predicted_funding_rate"] / 2) > SPOT_TAKER_FEE + FUTURES_TAKER_FEE
         ].reset_index(names=["symbol"])
         if df.empty:
-            return df
+            return {}
         for i in range(df.shape[0]):
             symbol = df.loc[i, "symbol"]
             res = self.exchange.s_session.query_interest_quota(currency=symbol[0:-4])[
@@ -100,9 +100,9 @@ class Strategy:
         ).reset_index(drop=True)
         logging.info(str(df.to_dict("index")))
         if df.empty:
-            return df
+            return {}
         else:
-            return df.iloc[0]
+            return df.iloc[0].to_dict()
 
     def _add_features(self, df):
         df["max_symbol"] = abs(df).idxmax(axis=1)
