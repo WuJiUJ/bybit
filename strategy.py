@@ -47,7 +47,7 @@ class Strategy:
 
         if (
             self.position == None
-            and not data.empty
+            and data
             and data["is_signal"]
             and not is_close_only
         ):
