@@ -15,7 +15,7 @@ class Order:
         coin_qty,
         usdt_qty=None,  # only useful for spot market order
     ):
-        self.id = None
+        self.id = ""
         self.symbol = symbol
         self.market = market
         self.type = order_type

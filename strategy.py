@@ -160,7 +160,7 @@ class Strategy:
             if self.position.f_entry_order.status == OrderStatus.FILLED:
                 self.position.status = PositionStatus.HOLDING
                 logging.info(f"entered position id {self.position.id} successfully")
-                time.sleep(1)
+                time.sleep(5)
                 self.broker.get_latest_orders_info(
                     self.position.s_entry_order, self.position.f_entry_order
                 )
@@ -196,12 +196,11 @@ class Strategy:
             self.position.closing_reason = reason
             self.position.status = PositionStatus.EXITED
             logging.info(f"exited position {self.position.id} successfully")
-            time.sleep(1)
+            time.sleep(5)
             self.broker.get_latest_orders_info(
                 self.position.s_exit_order, self.position.f_exit_order
             )
             self.position.calculate_position(self.exec_time)
-            logging.info(self.position.__str__())
             to_skl(
                 POSITION_RECORD_PATH + f"position_{self.position.id}.skl", self.position
             )

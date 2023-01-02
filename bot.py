@@ -113,9 +113,9 @@ class Bot:
                 self.test()
         except Exception as e:
             logging.error(e)
+        logging.info("----------------- Bot stopped -----------------")
         gdrive = Gdrive()
         gdrive.upload_file_to_gdrive("./logs/bot.log")
-        logging.info("----------------- Bot stopped -----------------")
         # gdrive.upload_file_to_gdrive("./logs/clogs.log")
         # if self.strategy.position != None:
         #     # todo: close position when if exist and have not tried to close
