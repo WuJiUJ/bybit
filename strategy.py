@@ -205,6 +205,7 @@ class Strategy:
                 POSITION_RECORD_PATH + f"position_{self.position.id}.skl", self.position
             )
             os.remove(POSITION_OBJECT_PATH)
+            self.position = None
             self.balance_fund()
         elif (
             self.position.s_exit_order.status != OrderStatus.FILLED
