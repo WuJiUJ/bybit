@@ -2,7 +2,7 @@ from bot import Bot
 
 
 def main():
-    bot = Bot(60)  # 1260
+    bot = Bot()  # 1260
     bot.run("start")
     # bot.run_loop()
 
