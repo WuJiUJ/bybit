@@ -145,15 +145,15 @@ class Position:
         self.spot_entry_commission = 0.0
         self.spot_exit_commission = 0.0        
         self.spot_closing_returns = 0
-        entry_usdt_amount = 0
-        exit_usdt_amount = 0
+        entry_usdt_amount = 0.0
+        exit_usdt_amount = 0.0
         for trade in s_trade_records:
             if trade["orderId"][0:-4] == self.s_entry_order.id[0:-4]:
-                self.spot_entry_commission += float(trade["feeAmount"])
-                entry_usdt_amount = float(trade["price"])*float(trade["qty"])
+                self.spot_entry_commission += -float(trade["feeAmount"])
+                entry_usdt_amount += float(trade["price"])*float(trade["qty"])
             elif trade["orderId"][0:-4] == self.s_exit_order.id[0:-4]:
-                self.spot_exit_commission += float(trade["feeAmount"])
-                exit_usdt_amount = float(trade["price"])*float(trade["qty"])
+                self.spot_exit_commission += -float(trade["feeAmount"])
+                exit_usdt_amount += float(trade["price"])*float(trade["qty"])
         if exit_usdt_amount and entry_usdt_amount:
             saf = 1 if self.is_long_spot else -1
             self.spot_closing_returns = saf * (exit_usdt_amount - entry_usdt_amount)
@@ -166,23 +166,23 @@ class Position:
         self.futures_exit_commission = 0.0
         for trade in f_trade_records:
             if trade["order_id"] == self.f_entry_order.id:
-                self.futures_entry_commission += trade["exec_fee"]
+                self.futures_entry_commission += -trade["exec_fee"]
             elif trade["order_id"] == self.f_exit_order.id:
-                self.futures_exit_commission += trade["exec_fee"]
+                self.futures_exit_commission += -trade["exec_fee"]
 
         self.closing_profit_loss = (
             self.futures_closing_returns + self.spot_closing_returns
         )
         self.holding_duration = time - self.open_time  # in msec
         self.margin_interest = (
-            self.usdt_margin_interest if hasattr(self, "usdt_margin_interest") else 0.0
+            -self.usdt_margin_interest if hasattr(self, "usdt_margin_interest") else 0.0
         )
         self.costs = (
-            -self.futures_entry_commission
-            - self.futures_exit_commission
-            - self.spot_entry_commission
-            - self.spot_exit_commission
-            - self.margin_interest
+            self.futures_entry_commission
+            + self.futures_exit_commission
+            + self.spot_entry_commission
+            + self.spot_exit_commission
+            + self.margin_interest
         )
         self.profit_loss = (
             self.closing_profit_loss + self.costs + self.funding_profit_loss
