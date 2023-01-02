@@ -142,6 +142,7 @@ class Strategy:
             f"failed to {action} position id {self.position.id} due to {source}"
         )
         logging.info(self.position.__str__())
+        self.position = None
 
     def _enter_position(self, target_symbol, target_rate, is_long_spot, max_loanable):
         self.position = Position(
