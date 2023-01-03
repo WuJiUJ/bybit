@@ -20,8 +20,8 @@ class Position:
         self.id = str(uuid.uuid4())
         self.open_time = open_time
         self.symbol = symbol
-        self.total_usdt = total_usdt
-        self.usdt_per_trade = total_usdt / 2
+        self.total__available_usdt = total_usdt
+        self.usdt_per_trade = self.total__available_usdt / 2
         self.exchange = exchange
         self.is_long_spot = is_long_spot
         self.entry_funding_rate = entry_funding_rate
@@ -47,6 +47,7 @@ class Position:
         actual_s_entry_usdt = self.exchange.coin_qty_to_usdt_margin(
             s_coin_qty, self.symbol
         )
+        self.usdt_per_trade = actual_s_entry_usdt # update usdt_per_trade in case can't borrow coin for max usdt
         if not self.is_long_spot:
             f_coin_qty = self.exchange.usdt_to_coin_qty_futures(
                 actual_s_entry_usdt, self.symbol
@@ -189,15 +190,3 @@ class Position:
         )
         self.close_time = time
         return self
-
-    def cal_closing_profit_loss_manually(self):
-        saf = 1 if self.is_long_spot else -1
-        self.spot_closing_returns = (
-            saf * ((self.spot_exit - self.spot_entry) / self.spot_entry) / 2
-        ) * self.total_usdt
-        faf = 1 if not self.is_long_spot else -1
-        self.futures_closing_returns = (
-            faf
-            * ((1 / self.futures_entry - 1 / self.futures_exit) * self.futures_exit)
-            / 2
-        ) * self.total_usdt

@@ -1,0 +1,30 @@
+2023-01-02 07:58:02 UTC: INFO: ----------------- Bot started -----------------
+2023-01-02 07:58:04 UTC: INFO: {0: {'symbol': 'JASMYUSDT', 'predicted_funding_rate': -0.00566704, 'abs_predicted_funding_rate': 0.00566704, '1h_interest_rate': 4.833333333333333e-06, 'loanable': 752928.0110508774, 'max_loanable': 9999.0, 'tradeable_usdt': 33.197, 'initial_fixed_profit_loss': 0.0022141866666666667, 'expected_usdt_profit': 0.14700870954666667, 'is_signal': True, 'is_long_spot': False}}
+2023-01-02 07:58:04 UTC: INFO: Statistic: {'total_usdt_balance': 1246.2754710976}
+2023-01-02 07:58:04 UTC: INFO: transferred 0.4721 USDT from SPOT to CONTRACT successfully
+2023-01-02 07:58:05 UTC: INFO: entering position e535d49f-ef58-45df-85db-c73ebbd66c41...
+2023-01-02 07:58:05 UTC: INFO: borrowed 9999.0 JASMY successfully with id: 386929
+2023-01-02 07:58:06 UTC: INFO: executed ENTRY margin order id 1324647492115078657 successfully
+2023-01-02 07:58:06 UTC: INFO: Order: {'id': '1324647492115078657', 'symbol': 'JASMYUSDT', 'market': <MarketType.SPOT: 'SPOT'>, 'type': 'MARKET', 'side': 'Sell', 'tag': 'ENTRY', 'exchange': <exchange.Exchange object at 0x7fe987650700>, 'coin_qty': 9999.0, 'exec_coin_qty': None, 'usdt_qty': 33.2, 'status': <OrderStatus.FILLED: 'FILLED'>, 'loan_id': None, 'price': None, 'cancel_reason': None}
+2023-01-02 07:58:07 UTC: INFO: executed ENTRY futures order id 53e16421-fd38-4192-b1de-747afcbb7695 successfully
+2023-01-02 07:58:07 UTC: INFO: Order: {'id': '53e16421-fd38-4192-b1de-747afcbb7695', 'symbol': 'JASMYUSDT', 'market': <MarketType.FUTURES: 'FUTURES'>, 'type': 'Market', 'side': 'Buy', 'tag': 'ENTRY', 'exchange': <exchange.Exchange object at 0x7fe987650700>, 'coin_qty': 10000.0, 'exec_coin_qty': None, 'usdt_qty': None, 'status': <OrderStatus.FILLED: 'FILLED'>, 'loan_id': None, 'price': None, 'cancel_reason': None}
+2023-01-02 07:58:07 UTC: INFO: entered position id e535d49f-ef58-45df-85db-c73ebbd66c41 successfully
+2023-01-02 07:58:12 UTC: INFO: Position: {'id': 'e535d49f-ef58-45df-85db-c73ebbd66c41', 'open_time': datetime.datetime(2023, 1, 2, 7, 58, 2, 907845), 'symbol': 'JASMYUSDT', 'total_usdt': 1183.96169754272, 'usdt_per_trade': 591.98084877136, 'exchange': <exchange.Exchange object at 0x7fe987650700>, 'is_long_spot': False, 'entry_funding_rate': -0.00566704, 's_entry_order': <order.Order object at 0x7fe97fb4a3b0>, 'f_entry_order': <order.Order object at 0x7fe97fb4baf0>, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': []}
+2023-01-02 07:58:12 UTC: INFO: ----------------- Bot stopped -----------------
+2023-01-02 07:58:12 UTC: INFO: access_token is expired. Now: 2023-01-02 07:58:12.549640, token_expiry: 2023-01-02 00:58:07
+2023-01-02 07:58:12 UTC: INFO: Refreshing access_token
+2023-01-02 07:58:12 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2023-01-02 15:58:03 UTC: INFO: ----------------- Bot started -----------------
+2023-01-02 15:58:04 UTC: INFO: {0: {'symbol': 'JASMYUSDT', 'predicted_funding_rate': -0.00581449, 'abs_predicted_funding_rate': 0.00581449, '1h_interest_rate': 4.833333333333333e-06, 'loanable': 660363.6627814884, 'max_loanable': 9999.0, 'tradeable_usdt': 36.857, 'initial_fixed_profit_loss': 0.002287911666666667, 'expected_usdt_profit': 0.16865112059666668, 'is_signal': True, 'is_long_spot': False}}
+2023-01-02 15:58:04 UTC: INFO: Position: {'id': 'e535d49f-ef58-45df-85db-c73ebbd66c41', 'open_time': datetime.datetime(2023, 1, 2, 7, 58, 2, 907845), 'symbol': 'JASMYUSDT', 'total_usdt': 1183.96169754272, 'usdt_per_trade': 591.98084877136, 'exchange': <exchange.Exchange object at 0x7f78ed7355a0>, 'is_long_spot': False, 'entry_funding_rate': -0.00566704, 's_entry_order': <order.Order object at 0x7f78ed736bf0>, 'f_entry_order': <order.Order object at 0x7f78ed736c20>, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0.18656645, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [(-0.00562625, -0.18656645, '2023-01-02T08:00:00.000Z')]}
+2023-01-02 15:58:04 UTC: INFO: ----------------- Bot stopped -----------------
+2023-01-02 15:58:04 UTC: INFO: access_token is expired. Now: 2023-01-02 15:58:04.280338, token_expiry: 2023-01-02 08:58:11
+2023-01-02 15:58:04 UTC: INFO: Refreshing access_token
+2023-01-02 15:58:04 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
+2023-01-02 23:58:02 UTC: INFO: ----------------- Bot started -----------------
+2023-01-02 23:58:05 UTC: INFO: {0: {'symbol': 'JASMYUSDT', 'predicted_funding_rate': -0.00218085, 'abs_predicted_funding_rate': 0.00218085, '1h_interest_rate': 4.833333333333333e-06, 'loanable': 699722.9879480255, 'max_loanable': 9999.0, 'tradeable_usdt': 35.047, 'initial_fixed_profit_loss': 0.0004710916666666665, 'expected_usdt_profit': 0.03302069928333332, 'is_signal': True, 'is_long_spot': False}}
+2023-01-02 23:58:05 UTC: INFO: Position: {'id': 'e535d49f-ef58-45df-85db-c73ebbd66c41', 'open_time': datetime.datetime(2023, 1, 2, 7, 58, 2, 907845), 'symbol': 'JASMYUSDT', 'total_usdt': 1183.96169754272, 'usdt_per_trade': 591.98084877136, 'exchange': <exchange.Exchange object at 0x7f298b1e9b40>, 'is_long_spot': False, 'entry_funding_rate': -0.00566704, 's_entry_order': <order.Order object at 0x7f298b1eb190>, 'f_entry_order': <order.Order object at 0x7f298b1eb1c0>, 'status': <PositionStatus.HOLDING: 'HOLDING'>, 'funding_profit_loss': 0.40114709, 'profit_loss': 0, 's_exit_order': None, 'f_exit_order': None, 'closing_reason': None, 'fundings': [(-0.00562625, -0.18656645, '2023-01-02T08:00:00.000Z'), (-0.00581677, -0.21458064, '2023-01-02T16:00:00.000Z')]}
+2023-01-02 23:58:05 UTC: INFO: ----------------- Bot stopped -----------------
+2023-01-02 23:58:05 UTC: INFO: access_token is expired. Now: 2023-01-02 23:58:05.428296, token_expiry: 2023-01-02 16:58:03
+2023-01-02 23:58:05 UTC: INFO: Refreshing access_token
+2023-01-02 23:58:05 UTC: INFO: file_cache is only supported with oauth2client<4.0.0
