@@ -30,16 +30,15 @@ class Strategy:
         # data["is_long_spot"] = True
 
         if self.position != None:
-            position_funding_rate = funding_rates.loc[
-                "predicted_funding_rate", self.position.symbol
-            ]
+            position_predicted_funding_fee = self.exchange.f_session.predicted_funding_rate(symbol=self.position.symbol)["result"]["predicted_funding_fee"]
             self._funding_rate_paid()
-            if self.position.is_long_spot == (position_funding_rate < 0):
+            # if self.position.is_long_spot == (position_funding_rate < 0):
+            if position_predicted_funding_fee >= 0:
                 self._exit_position(ExitReason.FCD)
             elif (
                 data
-                and data["initial_fixed_profit_loss"] > abs(position_funding_rate) / 2
                 and data["symbol"] != self.position.symbol
+                and data["expected_usdt_profit"] > -position_predicted_funding_fee
             ):
                 self._exit_position(ExitReason.FBO)
             elif is_close_only:

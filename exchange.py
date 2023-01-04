@@ -47,7 +47,7 @@ class Exchange:
     def get_futures_price(self, symbol):
         return float(
             self.f_session.latest_information_for_symbol(symbol=symbol)["result"][0][
-                "last_price"
+                "mark_price"
             ]
         )
 
